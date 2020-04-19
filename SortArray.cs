@@ -5,7 +5,7 @@ public class Program
 	public static void Main()
 	{
 		int[] exampleArray = new int[]{31, 41, 59, 26, 41, 58};	
-		InsertionSort sort = new InsertionSort(exampleArray);		
+		SortArray sort = new SortArray(exampleArray);		
 		
 		for (int i = 0; i < exampleArray.Length; i++)
 		{
