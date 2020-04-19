@@ -6,6 +6,8 @@
 
 #### Ascending
 
+    INSERTION-SORT(A)
+
     for j = 2 to A:length
 
        key = A[j]
@@ -45,6 +47,8 @@
 ## 2. Selection Sort
 
 ### Pseudocode
+
+    SELECTION-SORT(A)
 
     for j = 1 to A:length-1
     
