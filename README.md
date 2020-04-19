@@ -27,9 +27,11 @@
 ### Pseudocode
 
     for j = 1 to A:length-1
-
+    
        min = A[i]
-
+       
+       // Find smallest element of A[i..Length]
+       
        for j = i to A.Length
 
           if A[j] < min
