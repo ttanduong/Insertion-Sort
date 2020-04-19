@@ -4,25 +4,37 @@ public class Program
 {
 	public static void Main()
 	{
-		int[] arr = new int[]{31, 41, 59, 26, 41, 58};	
+		int[] exampleArray = new int[]{31, 41, 59, 26, 41, 58};	
+		InsertionSort sort = new InsertionSort(exampleArray);		
 		
-		for (int i = 0; i < arr.Length; i++)
+		for (int i = 0; i < exampleArray.Length; i++)
 		{
-			Console.Write(arr[i] + " ");
+			Console.Write(exampleArray[i] + " ");
 		}	
-		
-	//	InsertionSortAsc(arr);
-		InsertionSortDes(arr);
+			
+		//sort.InsertionSortAsc(exampleArray);
+		sort.InsertionSortDes(exampleArray);
 			
 		Console.WriteLine();
-		for (int i = 0; i < arr.Length; i++)
+		for (int i = 0; i < exampleArray.Length; i++)
 		{
-			Console.Write(arr[i] + " ");
+			Console.Write(exampleArray[i] + " ");
 		}
+	}
+}
+
+public class InsertionSort
+{
+	private int[] a;
+	
+	//Constructor
+	public InsertionSort(int[] arr)
+	{
+		a = arr;
 	}
 	
 	//Insertion Sort for ascending
-	static void InsertionSortAsc(int[] a)
+	public void InsertionSortAsc(int[] a)
 	{
 		for (int j = 1; j < a.Length; j++)
 		{
@@ -39,7 +51,7 @@ public class Program
 	}
 	
 	//Insertion Sort for Descending	 
-	static void InsertionSortDes(int[] a)
+	public void InsertionSortDes(int[] a)
 	{
 		for (int j = a.Length-2; j >= 0; j--)
 		{
