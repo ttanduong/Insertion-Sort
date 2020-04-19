@@ -42,7 +42,7 @@
 
        A[i-1] = key
 
-### Time cost: O(n^2)
+### Time complexity: O(n^2)
 
 ## 2. Selection Sort
 
@@ -70,4 +70,4 @@
           
           A[i] = min
        
-### Time cost: O(n^2)
+### Time complexity: O(n^2)
