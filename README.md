@@ -4,6 +4,8 @@
 
 ### Pseudocode
 
+#### Ascending
+
     for j = 2 to A:length
 
        key = A[j]
@@ -19,6 +21,24 @@
           i = i - 1
 
        A[i+1] = key
+
+#### Descending
+
+    for j = A:length-1 downto 1
+
+       key = A[j]
+
+       // Insert A[j] into the sorted sequence A[j+1..Length].
+
+       i = j + 1
+
+       while i < A.Length and A[i] > key
+
+          A[i-1] = A[i]
+
+          i = i + 1
+
+       A[i-1] = key
 
 ### Time cost: O(n^2)
 
