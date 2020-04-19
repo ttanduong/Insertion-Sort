@@ -19,3 +19,29 @@
           i = i - 1
 
        A[i+1] = key
+
+### Time cost: O(n^2)
+
+## 2. Selection Sort
+
+### Pseudocode
+
+    for j = 1 to A:length-1
+
+       min = A[i]
+
+       for j = i to A.Length
+
+          if A[j] < min
+          
+             min = A[j]
+             
+             minIndex = j
+          
+       if minIndex != i
+       
+          A[minIndex] = A[i]
+          
+          A[i] = min
+       
+### Time cost: O(n^2)
