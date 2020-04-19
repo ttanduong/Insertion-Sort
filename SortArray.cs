@@ -23,14 +23,14 @@ public class Program
 	}
 }
 
-public class InsertionSort
+public class SortArray
 {
-	private int[] a;
+	private int[] array;
 	
 	//Constructor
-	public InsertionSort(int[] arr)
+	public SortArray(int[] a)
 	{
-		a = arr;
+		array = a;
 	}
 	
 	//Insertion Sort for ascending
@@ -50,7 +50,7 @@ public class InsertionSort
 		}		
 	}
 	
-	//Insertion Sort for Descending	 
+	//Insertion Sort for descending	 
 	public void InsertionSortDes(int[] a)
 	{
 		for (int j = a.Length-2; j >= 0; j--)
@@ -65,5 +65,30 @@ public class InsertionSort
 			}		
 			a[i-1] = key;
 		}		
+	}
+	
+	//Selection Sort for ascending
+	public void SelectionSortAsc(int[] a)
+	{
+		for (int i = 0; i < a.Length-1; i++)
+		{
+			int min = a[i];
+			int minIndex = i;
+			
+			for (int j = i; j < a.Length; j++)
+			{
+				if (a[j] < min)
+				{
+					min = a[j];
+					minIndex = j;
+				}
+			}
+			
+			if (minIndex != i)
+			{
+				a[minIndex] = a[i];
+				a[i] = min;
+			}
+		}
 	}
 }
