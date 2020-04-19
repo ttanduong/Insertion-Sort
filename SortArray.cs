@@ -5,15 +5,15 @@ public class Program
 	public static void Main()
 	{
 		int[] exampleArray = new int[]{31, 41, 59, 26, 41, 58};	
-		SortArray sort = new SortArray(exampleArray);		
+		SortArray sort = new SortArray();	
 		
 		for (int i = 0; i < exampleArray.Length; i++)
 		{
 			Console.Write(exampleArray[i] + " ");
 		}	
 			
-		//sort.InsertionSortAsc(exampleArray);
 		sort.InsertionSortDes(exampleArray);
+		//sort.SelectionSortAsc(exampleArray);
 			
 		Console.WriteLine();
 		for (int i = 0; i < exampleArray.Length; i++)
@@ -24,15 +24,7 @@ public class Program
 }
 
 public class SortArray
-{
-	private int[] array;
-	
-	//Constructor
-	public SortArray(int[] a)
-	{
-		array = a;
-	}
-	
+{	
 	//Insertion Sort for ascending
 	public void InsertionSortAsc(int[] a)
 	{
