@@ -4,18 +4,19 @@ public class Program
 {
 	public static void Main()
 	{
-		int[] exampleArray = new int[]{31, 41, 59, 26, 41, 58};	
+		int[] exampleArray = new int[]{51, 1, 15, 100, 8, 70, 32, 45};	
 		SortArray sort = new SortArray();	
 		
 		for (int i = 0; i < exampleArray.Length; i++)
 		{
 			Console.Write(exampleArray[i] + " ");
 		}	
-			
-		sort.InsertionSortDes(exampleArray);
-		//sort.SelectionSortAsc(exampleArray);
-			
 		Console.WriteLine();
+			
+		//sort.InsertionSortDes(exampleArray);
+		//sort.SelectionSortAsc(exampleArray);
+		sort.MergeSort(exampleArray, 0, exampleArray.Length-1);
+	
 		for (int i = 0; i < exampleArray.Length; i++)
 		{
 			Console.Write(exampleArray[i] + " ");
@@ -80,6 +81,61 @@ public class SortArray
 			{
 				a[minIndex] = a[i];
 				a[i] = min;
+			}
+		}
+	}
+	
+	//Merge Sort
+	public void MergeSort(int[] A, int start, int end)
+	{
+		if (start < end)
+		{
+			int mid = (int)(start + end)/2;
+		
+			MergeSort(A, start, mid);
+			MergeSort(A, mid+1, end);
+			MergeSortRun(A, start, mid, end);
+		}		
+	}
+	
+	public void MergeSortRun(int[] A, int start, int mid, int end)
+	{		
+		int[] L = new int[mid - start + 1];  
+		int[] R = new int[end - mid];
+		
+		for (int i = 0; i < L.Length; i++)
+		{
+			L[i] = A[start + i];
+		}
+		for (int i = 0; i < R.Length; i++)
+		{
+			R[i] = A[i + mid + 1];
+		}		
+		
+		int lIndex = 0, rIndex = 0;
+		for (int i = start; i <= end; i++)
+		{
+			if (L[lIndex] < R[rIndex])
+			{
+				A[i] = L[lIndex];
+				lIndex++;
+			}
+			else
+			{
+				A[i] = R[rIndex];
+				rIndex++;
+			}
+			
+			if (lIndex >= L.Length)
+			{
+				Array.Copy(R, rIndex, A, i + 1, R.Length - rIndex);
+				break;
+			}
+			
+			if (rIndex >= R.Length)
+			{
+				Array.Copy(L, lIndex, A, i + 1, L.Length - lIndex);
+				break;
 			}
 		}
 	}
