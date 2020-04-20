@@ -26,7 +26,7 @@ public class Program
 
 public class SortArray
 {	
-	//Insertion Sort for ascending
+	/* Insertion Sort for ascending */
 	public void InsertionSortAsc(int[] a)
 	{
 		for (int j = 1; j < a.Length; j++)
@@ -34,6 +34,7 @@ public class SortArray
 			int key = a[j];
 			int i = j - 1;
 			
+			//Compare the key with elements of sorted array a[0..j-1]
 			while ((i >= 0) && (a[i] > key))
 			{
 				a[i+1] = a[i];
@@ -43,7 +44,7 @@ public class SortArray
 		}		
 	}
 	
-	//Insertion Sort for descending	 
+	/* Insertion Sort for descending */
 	public void InsertionSortDes(int[] a)
 	{
 		for (int j = a.Length-2; j >= 0; j--)
@@ -60,7 +61,7 @@ public class SortArray
 		}		
 	}
 	
-	//Selection Sort for ascending
+	/* Selection Sort for ascending */
 	public void SelectionSortAsc(int[] a)
 	{
 		for (int i = 0; i < a.Length-1; i++)
@@ -85,7 +86,7 @@ public class SortArray
 		}
 	}
 	
-	//Merge Sort
+	/* Merge Sort */
 	public void MergeSort(int[] A, int start, int end)
 	{
 		if (start < end)
