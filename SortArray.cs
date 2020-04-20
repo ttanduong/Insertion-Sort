@@ -115,16 +115,8 @@ public class SortArray
 		int lIndex = 0, rIndex = 0;
 		for (int i = start; i <= end; i++)
 		{
-			if (L[lIndex] < R[rIndex])
-			{
-				A[i] = L[lIndex];
-				lIndex++;
-			}
-			else
-			{
-				A[i] = R[rIndex];
-				rIndex++;
-			}
+			if (L[lIndex] < R[rIndex])	A[i] = L[lIndex++];				
+			else	A[i] = R[rIndex++];				
 			
 			if (lIndex >= L.Length)
 			{
