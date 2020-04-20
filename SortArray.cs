@@ -87,7 +87,7 @@ public class SortArray
 		
 		//Insert A[j] into the sorted sequence A[0..j-1]		
 		//so need sequence A[0..j] has already been sorted first
-		InsertRecursion(A, j);
+		InsertSortRecursion(A, j);
 		
 		int key = A[j];		
 		int i = j - 1;
