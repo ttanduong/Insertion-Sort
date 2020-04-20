@@ -13,8 +13,8 @@ public class Program
 		}	
 		Console.WriteLine();
 			
-		//sort.InsertionSortDes(exampleArray);
-		//sort.SelectionSortAsc(exampleArray);
+		//sort.InsertionSortReverse(exampleArray);
+		//sort.SelectionSort(exampleArray);
 		sort.MergeSort(exampleArray, 0, exampleArray.Length-1);
 	
 		for (int i = 0; i < exampleArray.Length; i++)
@@ -26,50 +26,62 @@ public class Program
 
 public class SortArray
 {	
-	/* Insertion Sort for ascending */
-	public void InsertionSortAsc(int[] a)
+	/* InsertionSort(int[] A)
+	 * Description: Sort an array ascending order using insertion sort algorithm
+	 * Param (int[] A): non-sorted array	
+	 * Return: Non
+	 */
+	public void InsertionSort(int[] A)
 	{
-		for (int j = 1; j < a.Length; j++)
+		for (int j = 1; j < A.Length; j++)
 		{
-			int key = a[j];
+			int key = A[j];
 			int i = j - 1;
 			
-			//Insert key into the sorted sequence a[0..j-1]
-			//if the key is smaller than some elements of that sequence
-			while ((i >= 0) && (a[i] > key))
+			//Insert A[j] into the sorted sequence A[0..j-1]
+			//if the key is greater than some elements of that sequence
+			while ((i >= 0) && (A[i] > key))
 			{
-				a[i+1] = a[i];
+				A[i+1] = A[i];
 				i--;				
 			}		
-			a[i+1] = key;
+			A[i+1] = key;
 		}		
 	}
 	
-	/* Insertion Sort for descending */
-	public void InsertionSortDes(int[] a)
+	/* InsertionSortReverse(int[] A)
+	 * Description: Sort an array descending order using insertion sort algorithm
+	 * Param (int[] A): non-sorted array	
+	 * Return: Non
+	 */
+	public void InsertionSortReverse(int[] A)
 	{
-		for (int j = a.Length-2; j >= 0; j--)
+		for (int j = A.Length-2; j >= 0; j--)
 		{
-			int key = a[j];
+			int key = A[j];
 			int i = j + 1;
-			
-			//Insert a[j] into the sorted sequence a[j+1..Length-1]
+
+			//Insert A[j] into the sorted sequence A[j+1..Length-1]
 			//if the key is greater than some elements of that sequence
-			while ((i <= a.Length-1) && (a[i] > key))
+			while ((i <= A.Length-1) && (A[i] > key))
 			{
-				a[i-1] = a[i];
+				A[i-1] = A[i];
 				i++;				
 			}		
-			a[i-1] = key;
+			A[i-1] = key;
 		}		
-	}
+	}		
 	
-	/* Selection Sort for ascending */
-	public void SelectionSortAsc(int[] a)
+	/* SelectionSort(int[] A)
+	 * Description: Sort an array ascending order using selection sort algorithm
+	 * Param (int[] A): non-sorted array	
+	 * Return: Non
+	 */
+	public void SelectionSort(int[] a)
 	{
 		for (int i = 0; i < a.Length-1; i++)
 		{
-			int min = a[i];
+			int min = a[i];	
 			int minIndex = i;
 			
 			//Find the smallest element of sequence a[i..Length-1]
@@ -89,9 +101,15 @@ public class SortArray
 				a[i] = min;
 			}
 		}
-	}
+	}	
 	
-	/* Merge Sort */
+	/* MergeSort(int[] A, int start, int end)
+	 * Description: Sort an array ascending order using merge sort algorithm
+	 * Param1 (int[] A): non-sorted array	
+	 * Param2 (int start): index of the first element of A[]	
+	 * Param3 (int end): index of the last element of A[]
+	 * Return: Non
+	 */
 	public void MergeSort(int[] A, int start, int end)
 	{
 		if (start < end)
@@ -105,15 +123,20 @@ public class SortArray
 			MergeSort(A, mid+1, end);
 			
 			//Merge 2 sorted sub-elements
-			MergeSortRun(A, start, mid, end);
+			Merge(A, start, mid, end);
 		}		
 	}
 	
-	/* Merge 2 sorted sub-arrays of A[s..e]
-	 * First sorted sub-array: L[] = A[s..m]
-	 * Second sorted sub-array: R[] = A[m+1..e]
+	/* Merge(int[] A, int start, int mid, int end)
+	 * Description: Merge 2 sorted sub-arrays A[start..mid], A[mid+1..end] 
+	 *              to obtain an ascending array using merge sort algorithm
+	 * Param1 (int[] A): A[] which contains 2 sorted sub-arrays: A[start..mid], A[mid+1..end]
+	 * Param2 (int start): index of the first element of A[]	
+	 * Param3 (int mid): index of the middle element of A[]
+	 * Param4 (int end): index of the last element of A[]
+	 * Return: Non
 	 */
-	public void MergeSortRun(int[] A, int start, int mid, int end)
+	public void Merge(int[] A, int start, int mid, int end)
 	{		
 		int[] L = new int[mid - start + 1];  	//Left sub-array
 		int[] R = new int[end - mid];		//Right sub-array
