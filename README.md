@@ -97,3 +97,5 @@
              A[i] = A[j-1]
              
              A[j-1] = temp
+
+### Time complexity: O(n^2)
