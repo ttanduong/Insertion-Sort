@@ -70,7 +70,35 @@ public class SortArray
 			}		
 			A[i-1] = key;
 		}		
-	}		
+	}	
+	
+	/* InsertSortRecursion(int[] A, int length)
+	 * Description: Sort an array descending order using insertion sort algorithm and recursion
+	 * Param1 (int[] A): non-sorted array	
+	 * Param2 (int[] length): length of A[]	
+	 * Return: Non
+	 */
+	public void InsertSortRecursion(int[] A, int length)
+	{		
+		//Array which has 1 element doesn't need to sort
+		if (length <= 1)	return;
+				
+		int j = length - 1;	
+		
+		//Insert A[j] into the sorted sequence A[0..j-1]		
+		//so need sequence A[0..j] has already been sorted first
+		InsertRecursion(A, j);
+		
+		int key = A[j];		
+		int i = j - 1;
+			
+		while ((i >= 0) && (A[i] > key))
+		{
+			A[i+1] = A[i];
+			i--;				
+		}		
+		A[i+1] = key;
+	}
 	
 	/* SelectionSort(int[] A)
 	 * Description: Sort an array ascending order using selection sort algorithm
@@ -160,7 +188,7 @@ public class SortArray
 			if (L[lIndex] < R[rIndex])	A[i] = L[lIndex++];				
 			else	A[i] = R[rIndex++];				
 			
-			//In case all elements of L[] have already been copied to A[]
+			//In case all elements of L[] has already been copied to A[]
 			//Copy remaining elements of R[] sub-array back into A[]
 			if (lIndex >= L.Length)
 			{
@@ -168,7 +196,7 @@ public class SortArray
 				break;
 			}
 			
-			//In case all elements of R[] have already been copied to A[]
+			//In case all elements of R[] has already been copied to A[]
 			//Copy remaining elements of L[] sub-array back into A[]
 			if (rIndex >= R.Length)
 			{
