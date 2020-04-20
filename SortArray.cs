@@ -91,18 +91,28 @@ public class SortArray
 		if (start < end)
 		{
 			int mid = (int)(start + end)/2;
-		
+			
+			//Merge sort for first sub-array
 			MergeSort(A, start, mid);
+			
+			//Merge sort for second sub-array
 			MergeSort(A, mid+1, end);
+			
+			//Merge 2 sorted sub-elements
 			MergeSortRun(A, start, mid, end);
 		}		
 	}
 	
+	/* Merge 2 sorted sub-arrays of A[s..e]
+	 * First sorted sub-array: L[] = A[s..m]
+	 * Second sorted sub-array: R[] = A[m+1..e]
+	 */
 	public void MergeSortRun(int[] A, int start, int mid, int end)
 	{		
-		int[] L = new int[mid - start + 1];  
-		int[] R = new int[end - mid];
+		int[] L = new int[mid - start + 1];  	//Left sub-array
+		int[] R = new int[end - mid];		//Right sub-array
 		
+		//Copy elements of A[] array to L[] and R[] sub-array
 		for (int i = 0; i < L.Length; i++)
 		{
 			L[i] = A[start + i];
@@ -111,19 +121,26 @@ public class SortArray
 		{
 			R[i] = A[i + mid + 1];
 		}		
+				
+		int lIndex = 0;		//Index of L[] sub-array
+		int rIndex = 0;		//Index of R[] sub-array
 		
-		int lIndex = 0, rIndex = 0;
+		//Merge 2 sub-arrays back into array A[s..e]
 		for (int i = start; i <= end; i++)
 		{
 			if (L[lIndex] < R[rIndex])	A[i] = L[lIndex++];				
 			else	A[i] = R[rIndex++];				
 			
+			//In case all elements of L[] have already been copied to A[]
+			//Copy remaining elements of R[] sub-array back into A[]
 			if (lIndex >= L.Length)
 			{
 				Array.Copy(R, rIndex, A, i + 1, R.Length - rIndex);
 				break;
 			}
 			
+			//In case all elements of R[] have already been copied to A[]
+			//Copy remaining elements of L[] sub-array back into A[]
 			if (rIndex >= R.Length)
 			{
 				Array.Copy(L, lIndex, A, i + 1, L.Length - lIndex);
