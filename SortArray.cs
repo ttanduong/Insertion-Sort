@@ -237,4 +237,33 @@ public class SortArray
 			}			
 		}		
 	}
+	
+	/* MixMergeSelection(int[] A, int start, int end)
+	 * Description: Sort an array ascending order using merge and selection sort algorithm
+	 * Param1 (int[] A): non-sorted array	
+	 * Param2 (int start): index of the first element of A[]	
+	 * Param3 (int end): index of the last element of A[]
+	 * Return: Non
+	 */
+	public void MixMergeSelection(int[] A, int start, int end)
+	{
+		if (start < end)
+		{
+			if ((end - start + 1) <= SELECTION_THRESHOLD)			
+				SelectionSort(A);			
+			else
+			{
+				int mid = (int)(start + end)/2;
+			
+				//Merge sort for first sub-array
+				MergeSort(A, start, mid);
+
+				//Merge sort for second sub-array
+				MergeSort(A, mid+1, end);
+
+				//Merge 2 sorted sub-elements
+				Merge(A, start, mid, end);				
+			}			
+		}		
+	}
 }
