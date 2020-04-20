@@ -71,3 +71,29 @@
           A[i] = min
        
 ### Time complexity: O(n^2)
+
+## 3. Merge Sort
+
+### Pseudocode
+
+#### Ascending
+
+## 4. Bubble Sort
+
+### Pseudocode
+
+#### Ascending
+
+    BUBBLE-SORT(A)
+
+    for i = 1 to A:length - 1
+    
+       for j = A.Length dowto i + 1
+          
+          if A[j] > A[j-1]
+             
+             temp = A[i]
+             
+             A[i] = A[j-1]
+             
+             A[j-1] = temp
