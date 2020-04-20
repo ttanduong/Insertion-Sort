@@ -34,7 +34,8 @@ public class SortArray
 			int key = a[j];
 			int i = j - 1;
 			
-			//Compare the key with elements of sorted array a[0..j-1]
+			//Insert key into the sorted sequence a[0..j-1]
+			//if the key is smaller than some elements of that sequence
 			while ((i >= 0) && (a[i] > key))
 			{
 				a[i+1] = a[i];
@@ -52,6 +53,8 @@ public class SortArray
 			int key = a[j];
 			int i = j + 1;
 			
+			//Insert a[j] into the sorted sequence a[j+1..Length-1]
+			//if the key is greater than some elements of that sequence
 			while ((i <= a.Length-1) && (a[i] > key))
 			{
 				a[i-1] = a[i];
@@ -69,6 +72,7 @@ public class SortArray
 			int min = a[i];
 			int minIndex = i;
 			
+			//Find the smallest element of sequence a[i..Length-1]
 			for (int j = i; j < a.Length; j++)
 			{
 				if (a[j] < min)
@@ -78,6 +82,7 @@ public class SortArray
 				}
 			}
 			
+			//Swap the smallest element with the fisrt element of sequence a[i..Length-1]
 			if (minIndex != i)
 			{
 				a[minIndex] = a[i];
