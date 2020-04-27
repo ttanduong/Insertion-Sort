@@ -129,7 +129,9 @@
        
        MERGE(A, p, q, r)
 
-## 5. Mix Merge sort with insertion and selection
+### Time complexity: O(n*lgn)
+
+## 4. Mix Merge sort with insertion and selection
 
 ### Pseudocode
 
@@ -166,7 +168,7 @@
           
           MERGE(A, p, m, r)
 
-## 4. Bubble Sort
+## 5. Bubble Sort
 
 ### Pseudocode
 
