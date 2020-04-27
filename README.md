@@ -76,7 +76,45 @@
 
 ### Pseudocode
 
-#### Ascending
+    MERGE(A, p, q, r)
+
+    n1 = q - p + 1
+    
+    n2 = r - q
+    
+    Let L[1..n1], R[1..n2] be new arrays
+    
+    for i = 1 to n1
+    
+       L[i] = A[p+i-1]
+    
+    for i = 1 to n1
+    
+       L[i] = A[p+i-1]
+    
+    i = 1
+    
+    j = 1
+    
+    for k = p to r
+       
+       if L[i] <= R[i]
+       
+          A[k] = L[i]
+          
+          i = i + 1
+       
+       else A[k] = R[i]
+       
+          j = j + 1
+          
+       if i >= L.Length
+       
+          Copy the rest of R[] array to A and break out of for loop
+          
+       if j >= R.Length
+       
+          Copy the rest of L[] array to A and break out of for loop
 
 ## 4. Bubble Sort
 
