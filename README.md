@@ -129,6 +129,43 @@
        
        MERGE(A, p, q, r)
 
+## 5. Mix Merge sort with insertion and selection
+
+### Pseudocode
+
+    MIXMERGEINSERTION(A, p, r)
+            
+    if p < r
+       
+       if r - q + 1 <= 20
+       
+          INSERTION-SORT(A)(A)
+          
+       else   m = (r + q)/2
+          
+          MERGE-SORT(A, p, m)
+          
+          MERGE-SORT(A, m + 1, r)
+          
+          MERGE(A, p, m, r)
+          
+
+    MIXMERGESELECTION(A, p, r)
+            
+    if p < r
+       
+       if r - q + 1 <= 15
+       
+          SELECTION-SORT(A)
+          
+       else   m = (r + q)/2
+          
+          MERGE-SORT(A, p, m)
+          
+          MERGE-SORT(A, m + 1, r)
+          
+          MERGE(A, p, m, r)
+
 ## 4. Bubble Sort
 
 ### Pseudocode
