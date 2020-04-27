@@ -116,7 +116,7 @@
        
           Copy the rest of L[] array to A and break out of for loop
           
-          
+
     MERGE-SORT(A, p, r)
     
     if p < r
@@ -148,7 +148,7 @@
           MERGE-SORT(A, m + 1, r)
           
           MERGE(A, p, m, r)
-          
+
 
     MIXMERGESELECTION(A, p, r)
             
