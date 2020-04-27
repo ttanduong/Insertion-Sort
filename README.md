@@ -115,6 +115,19 @@
        if j >= R.Length
        
           Copy the rest of L[] array to A and break out of for loop
+          
+          
+    MERGE-SORT(A, p, r)
+    
+    if p < r
+    
+       q = (p + r)/2
+       
+       MERGE-SORT(A, p, q)
+       
+       MERGE-SORT(A, q + 1, r)
+       
+       MERGE(A, p, q, r)
 
 ## 4. Bubble Sort
 
