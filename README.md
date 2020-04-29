@@ -74,6 +74,10 @@
 
 ## 3. Merge Sort
 
+### Description:
+
+This algorithm uses **the divide-and-conquer method** to solve the problem.
+
 ### Pseudocode
 
     MERGE(A, p, q, r)
