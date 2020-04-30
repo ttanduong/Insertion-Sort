@@ -6,7 +6,7 @@
 
 #### Ascending
 
-    **INSERTION-SORT(A)**
+    INSERTION-SORT(A)
 
     for j = 2 to A:length
 
