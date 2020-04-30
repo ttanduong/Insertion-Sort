@@ -6,7 +6,7 @@
 
 #### Ascending
 
-    INSERTION-SORT(A)
+   **INSERTION-SORT(A)**
 
     for j = 2 to A:length
 
@@ -46,9 +46,13 @@
 
 ## 2. Selection Sort
 
+### Description: 
+
+Using **the brute force method**
+
 ### Pseudocode
 
-    SELECTION-SORT(A)
+   **SELECTION-SORT(A)**
 
     for j = 1 to A:length-1
     
@@ -80,7 +84,7 @@ This algorithm uses **the divide-and-conquer method** to solve the problem.
 
 ### Pseudocode
 
-    MERGE(A, p, q, r)
+   **MERGE(A, p, q, r)**
 
     n1 = q - p + 1
     
@@ -121,7 +125,7 @@ This algorithm uses **the divide-and-conquer method** to solve the problem.
           Copy the rest of L[] array to A and break out of for loop
           
 
-    MERGE-SORT(A, p, r)
+   **MERGE-SORT(A, p, r)**
     
     if p < r
     
@@ -139,7 +143,7 @@ This algorithm uses **the divide-and-conquer method** to solve the problem.
 
 ### Pseudocode
 
-    MIXMERGEINSERTION(A, p, r)
+   **MIXMERGEINSERTION(A, p, r)**
             
     if p < r
        
@@ -156,7 +160,7 @@ This algorithm uses **the divide-and-conquer method** to solve the problem.
           MERGE(A, p, m, r)
 
 
-    MIXMERGESELECTION(A, p, r)
+   **MIXMERGESELECTION(A, p, r)**
             
     if p < r
        
@@ -178,7 +182,7 @@ This algorithm uses **the divide-and-conquer method** to solve the problem.
 
 #### Ascending
 
-    BUBBLE-SORT(A)
+   **BUBBLE-SORT(A)**
 
     for i = 1 to A:length - 1
     
